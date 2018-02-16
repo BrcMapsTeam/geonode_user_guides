@@ -13,7 +13,7 @@ This install guide will be similar to the link above, but will be specific for o
 
 2.  Run the command. This ensures that all packages are up to date. (This should have been completed by IT already, but just to check)
 
-`sudo apt-get update; sudo apt-get upgrade`
+    `sudo apt-get update; sudo apt-get upgrade`
 
 3. 
 
