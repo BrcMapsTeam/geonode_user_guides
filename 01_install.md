@@ -20,6 +20,10 @@ This install guide will be similar to the link above, but will be specific for o
     You will be prompted for a password. Enter the password to the server
     
     You will be promted to confirm if you want to continue, type Y and enter
+    
+    It will start to update
+    
+    This will take a few minutes
 
 3. 
 
