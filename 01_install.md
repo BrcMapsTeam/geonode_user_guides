@@ -9,9 +9,9 @@ This install guide will be similar to the link above, but will be specific for o
 
 ## Install
 
-1. Log in to our server using the IP and open the terminal.
+1.  Log in to our server using the IP and open the terminal.
 
-2. Run the command. This ensures that all packages are up to date. (This should have been completed by IT already, but just to check)
+2.  Run the command. This ensures that all packages are up to date. (This should have been completed by IT already, but just to check)
 
     `sudo apt-get update; sudo apt-get upgrade`
     
@@ -25,7 +25,7 @@ This install guide will be similar to the link above, but will be specific for o
     
     This will take a few minutes
 
-3. The steps to install geonode and all dependencies in Ubuntu 16.04 are as follows:
+3.  The steps to install geonode and all dependencies in Ubuntu 16.04 are as follows:
 
     Set up the GeoNode PPA repository (you only need to do this once; the repository will still be available for upgrades later):
     
@@ -35,15 +35,31 @@ This install guide will be similar to the link above, but will be specific for o
     
     You will be asked to confirm, by pressing enter
 
-4. Install the geonode package and dependencies:
-You can do this one by bone or all at once
+4.  Install the geonode package and dependencies:
+    You can do this one by bone or all at once
 
-`sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove
-sudo apt-get install geonode`
+    `sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove
+    sudo apt-get install geonode`
 
-During our `apt-get autoremove` we removed snap-confine v2.29.4.2
+    During our `apt-get autoremove` we removed snap-confine v2.29.4.2
 
-5. 
+    You will be asked to confirm
+
+5.  It will now install
+
+    You may get a couple of warnings about the Django version.
+    The Django version which is installed is: 1.8.7
+
+6. The next step is to det the correct ip address.
+
+    There are 2 options:
+    1. `sudo geonode-updateip localhost` (where we can change localhost to our IP)
+    2. `IP_ADDRESS=$(ip route get 8.8.8.8 | awk ‘{print $NF; exit}’)` `sudo geonode-updateip $IP_ADDRESS`
+        The first half identifies the IP (check this is correct first) and the second half updates it (as in step 1)
+        
+7. 
+
+
 
 
 
