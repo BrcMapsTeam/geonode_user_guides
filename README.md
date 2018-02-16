@@ -19,6 +19,10 @@ Using filezilla
 
 Add layers to Geonode using the command line. This is for large layers which cannot be uploaded through the user interface
 
+# 98
+
+Naming conventions for Geonode. Makesure when we WMS into Geonode, we know what we are getting.
+
 ## 99 
 
 This is the master user guide, for users of geonode, not administrators.  
