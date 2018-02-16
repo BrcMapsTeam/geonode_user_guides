@@ -56,7 +56,9 @@ This install guide will be similar to the link above, but will be specific for o
     
     `geonode createsuperuser`
 
-7.  The next step is to det the correct ip address. Change 'localhost' to the IP *Make sure this is correct as it is a one time thing. Changing IP after install has created errors in previous installs*
+7.  The next step is to det the correct ip address. Change 'localhost' to the IP 
+
+    *Make sure this is correct as it is a one time thing. Changing IP after install has created errors in previous installs*
 
     `sudo geonode-updateip localhost` 
         
