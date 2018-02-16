@@ -63,5 +63,7 @@ This install guide will be similar to the link above, but will be specific for o
             `tracepath IPADDRESS`
 
 
-
+    -> We added the IP address as the command was updateip, rather than DN/HOSTNAME
+    
+    
 
