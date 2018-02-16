@@ -50,18 +50,16 @@ This install guide will be similar to the link above, but will be specific for o
     You may get a couple of warnings about the Django version.
     The Django version which is installed is: 1.8.7
 
-6. The next step is to det the correct ip address.
+6. Create a superuser account
 
-    6.1.    There are 2 options:
-            
-            1. `sudo geonode-updateip localhost` (where we can change localhost to our IP)
-            2.  `IP_ADDRESS=$(ip route get 8.8.8.8 | awk ‘{print $NF; exit}’)` `sudo geonode-updateip $IP_ADDRESS`
-    
-                The first half identifies the IP (check this is correct first) and the second half updates it (as in step 1)
+This will be used in the geonode web application. You will be prompted for a username, email and password:
+    `geonode createsuperuser`
+
+7. The next step is to det the correct ip address. Change 'localhost' to the IP
+    `sudo geonode-updateip localhost` 
         
-    6.2     To find out the name of the server   
+    6.1     To find out the name of the server   
             `tracepath IPADDRESS`
-
 
     -> We added the IP address as the command was updateip, rather than DN/HOSTNAME
     
