@@ -52,14 +52,14 @@ This install guide will be similar to the link above, but will be specific for o
 
 6. The next step is to det the correct ip address.
 
+6.1.    To find out the name of the server:
+        `tracepath IPADDRESS`
+
     There are 2 options:
     1. `sudo geonode-updateip localhost` (where we can change localhost to our IP)
     2. `IP_ADDRESS=$(ip route get 8.8.8.8 | awk ‘{print $NF; exit}’)` `sudo geonode-updateip $IP_ADDRESS`
         The first half identifies the IP (check this is correct first) and the second half updates it (as in step 1)
         
-7. 
-
-
 
 
 
