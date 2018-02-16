@@ -3,7 +3,7 @@
 This is a repository holding all install and user instructions/guides for GeoNode at BRC
 
 
-## 01 Install
+## [01 Install](https://github.com/BrcMapsTeam/geonode_user_guides/blob/master/01_install.md)
 
 Guidance to install Geonode on a BRC Ubuntu machine
 
