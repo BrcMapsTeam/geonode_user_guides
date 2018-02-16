@@ -52,16 +52,18 @@ This install guide will be similar to the link above, but will be specific for o
 
 6. Create a superuser account
 
-This will be used in the geonode web application. You will be prompted for a username, email and password:
+    This will be used in the geonode web application. You will be prompted for a username, email and password:
     `geonode createsuperuser`
 
 7. The next step is to det the correct ip address. Change 'localhost' to the IP
     `sudo geonode-updateip localhost` 
         
-    6.1     To find out the name of the server   
+    7.1     To find out the name of the server   
             `tracepath IPADDRESS`
 
     -> We added the IP address as the command was updateip, rather than DN/HOSTNAME
+
+You should now be able to login to geonode as admin and check if geoserver oauth2 works etc. 
     
     
 
