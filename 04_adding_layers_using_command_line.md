@@ -7,7 +7,7 @@
 
     `cd /home/admin/ftp/files`
 
-    **CHECK IF THIS IS CORRECT**
+    **CHECK IF THIS FILE PATH CORRECT**
     
 3.  Import the files
     
@@ -33,9 +33,12 @@
     For example:
 
     `sudo chown www-data:www-data rofrs_v201704_extract_high.dbf
-    sudo chown www-data:www-data rofrs_v201704_extract_high.prj
-    sudo chown www-data:www-data rofrs_v201704_extract_high.shp
-    sudo chown www-data:www-data rofrs_v201704_extract_high.shx`
+    
+    `sudo chown www-data:www-data rofrs_v201704_extract_high.prj`
+    
+    `sudo chown www-data:www-data rofrs_v201704_extract_high.shp`
+    
+    `sudo chown www-data:www-data rofrs_v201704_extract_high.shx`
 
 
 5.  You may need to get the admin user to change ownership of the layer before you can edit it using the geonode website interface.
