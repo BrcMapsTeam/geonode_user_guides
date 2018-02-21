@@ -38,8 +38,9 @@ This install guide will be similar to the link above, but will be specific for o
 4.  Install the geonode package and dependencies:
     You can do this one by bone or all at once
 
-    `sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove
-    sudo apt-get install geonode`
+    `sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove`
+   
+    `sudo apt-get install geonode`
 
     During our `apt-get autoremove` we removed snap-confine v2.29.4.2
 
