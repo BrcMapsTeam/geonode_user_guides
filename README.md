@@ -7,15 +7,15 @@ This is a repository holding all install and user instructions/guides for GeoNod
 
 Guidance to install Geonode on a BRC Ubuntu machine
 
-### 02 
+### 0 
 
 Setting up an FTP
 
-### 03
+### 0
 
 Using filezilla
 
-### 04
+### 0
 
 Add layers to Geonode using the command line. This is for large layers which cannot be uploaded through the user interface
 
