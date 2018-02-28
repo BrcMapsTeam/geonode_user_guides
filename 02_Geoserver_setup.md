@@ -1,6 +1,7 @@
 # GeoServer
 
-Once installed, we need to connect geoserver to geonode. 
+Once installed, we need to edit some settings 
+connect geoserver to geonode. 
 
 Go to 'Global' settings
 
