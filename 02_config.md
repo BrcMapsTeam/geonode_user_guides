@@ -43,6 +43,9 @@ Navigate to `/etc/geonode/local_settings.py` (if GeoNode has been installed usin
 
 We have an API as an organisation
 
+Get an API key from Microsoft at http://www.bingmapsportal.com/ and place it in `local_settings.py` (__NEED TO CHECK IF THIS IS THE CORRECT LOCATION__)
+
+
 
 NEED TO COMPLETE
 
