@@ -35,13 +35,29 @@ hosts:
     port: 80
 ```
 
+## Adding layers from Google, Bing and other providers
+
+Navigate to `/etc/geonode/local_settings.py` (if GeoNode has been installed using apt-get). It will be in a different location if it was installed using a different means. 
+
+### Adding Bing
+
+We have an API as an organisation
+
+
+NEED TO COMPLETE
+
+## Configuring user registration 
+
+Navigate to `/etc/geonode/local_settings.py` (if GeoNode has been installed using apt-get). It will be in a different location if it was installed using a different means. 
+
+
+
+
+## Enable registration
+
+
+
+
 ---
-
-
-
-
-
-
-
 
 image an text credit: geonode.org and contributors
