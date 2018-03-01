@@ -10,18 +10,11 @@ Navigate to GeoServer from the main GeoNode page. Login and click on Global in t
 
 ![geoserver_settings_global.png](https://github.com/BrcMapsTeam/geonode_user_guides/blob/master/img/geoserver_settings_global.png "geoserver_settings_global.png")
 
+Change the Proxy Base URL, changing localhost:8080 to your HOSTNAME or IP address
+
+![geoserver_settings_global_url.png](https://github.com/BrcMapsTeam/geonode_user_guides/blob/master/img/geoserver_serttings_global_url.PNG "geoserver_settings_global_url.png")
 
 
-
-Once installed, we need to edit some settings 
-connect geoserver to geonode. 
-
-Go to 'Global' settings
-
-and change the proxy base URL
-edit localhost:8080 to your hostname
-
-ADD HOW TO CHECK THAT IT IS WORKING 
 
 
 
