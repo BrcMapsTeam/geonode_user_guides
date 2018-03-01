@@ -1,4 +1,4 @@
-# GeoServer
+# Config
 
 ## Set the correct GeoServer Proxy URL value
 
