@@ -14,6 +14,23 @@ Change the Proxy Base URL, changing localhost:8080 to your HOSTNAME or IP addres
 
 ![geoserver_settings_global_url.png](https://github.com/BrcMapsTeam/geonode_user_guides/blob/master/img/geoserver_serttings_global_url.PNG "geoserver_settings_global_url.png")
 
+## Configure Printing Module
+
+This will edit the printing options for Geonode
+
+Navigate to, the GeoServer Data directory and edit the file `/usr/share/geoserver/data/printing/config.yaml`
+
+1. To change the dpi options edit the first section. In the below example, I have only allopwed 150 and 300dpi prints.
+
+![printing_module_config_dpi_1.PNG](https://github.com/BrcMapsTeam/geonode_user_guides/blob/master/img/printing_module_config_dpi_1.PNG "printing_module_config_dpi_1.PNG")
+
+![printing_module_config_dpi.PNG](https://github.com/BrcMapsTeam/geonode_user_guides/blob/master/img/printing_module_config_dpi.PNG "printing_module_config_dpi.PNG")
+
+2.
+
+
+
+
 
 
 
