@@ -26,7 +26,16 @@ Navigate to, the GeoServer Data directory and edit the file `/usr/share/geoserve
 
 ![printing_module_config_dpi.PNG](https://github.com/BrcMapsTeam/geonode_user_guides/blob/master/img/printing_module_config_dpi.PNG "printing_module_config_dpi.PNG")
 
-2.
+2. Ensure that the IP or HOSTNAME is listed
+
+For example
+
+```
+hosts:
+  - !dnsMatch
+    host: YOUR_IP_ADDRESS
+    port: 80
+```
 
 
 
