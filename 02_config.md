@@ -1,5 +1,7 @@
 # Config
 
+http://docs.geonode.org/en/master/tutorials/advanced/geonode_production/production.html
+
 ## Set the correct GeoServer Proxy URL value
 
 If you are unable to log in to GeoServer the default username is admin with geoserver as the password. 
