@@ -62,6 +62,39 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
     vsftpd is now installed and the neccassary ports are open.
     
+6.  The next step is to prepare the user directory, which will have access to the FTP.
+
+    Create a user
+    
+    `sudo adduser admin`
+    
+    You will be prompted to assign a password.
+    
+    Press ENTER through other prompts.
+    
+7.  Now create the `ftp` folder
+
+    `mkdir /home/admin/ftp`
+    
+    set ownership
+    
+    `sudo chown nobody:nogroup /home/admin/ftp`
+    
+    remove all write permissions
+    
+    `sudo chmod a-w /home/admin/ftp`
+    
+8.  Now verify the permissions we have just set.
+
+    `sudo ls -la /home/admin/ftp`
+    
+    ``` 
+    Output
+    total 8
+    4 dr-xr-xr-x  2 nobody nogroup 4096 Aug 24 21:29 .
+    4 drwxr-xr-x 3 sammy  sammy   4096 Aug 24 21:29 ..
+    ```
+    
     
     
     
