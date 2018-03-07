@@ -43,8 +43,11 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     OpenSSH (v6)   ALLOW   Anywhere (v6)
     ```
     
+    There may be a variety of other rules in place.
     
+    To see this information, but not in the terminal and with a GUI, you can install gfuw
     
+    `sudo apt-get install gufw`
     
     
     
