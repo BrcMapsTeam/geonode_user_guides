@@ -49,6 +49,22 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
     `sudo apt-get install gufw`
     
+ 5. We'll need to open ports 20 and 21 for FTP, port 990 for later when we enable TLS, and ports 40000-50000 for the range of passive ports we plan to set in the configuration file:
+ 
+    ```
+    sudo ufw allow 20/tcp
+    sudo ufw allow 21/tcp
+    sudo ufw allow 990/tcp
+    sudo ufw allow 40000:50000/tcp
+    sudo ufw status
+    ```
+    The firewall rules should now be updated. 
+    
+    vsftpd is now installed and the neccassary ports are open.
+    
+    
+    
+    
     
     
     
