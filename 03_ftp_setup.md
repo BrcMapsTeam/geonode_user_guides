@@ -116,8 +116,41 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
 
     `echo "vsftpd test file" | sudo tee /home/sammy/ftp/files/test.txt`
     
-    Now that we have the `ftp` directory and allowed user access to the `files` directory the next step is configuaration
+    Now that we have the `ftp` directory and allowed user access to the `files` directory the next step is configuaration.
     
+12. We're planning to allow a single user with a local shell account to connect with FTP. The two key settings for this are already set in `vsftpd.conf`. Start by opening the config file   
+
+    `sudo gedit /etc/vsftpd.conf`
+    
+    I have used gedit, but you can also use nano
+    
+13. In `vsftpd.conf` check that the settings in your configuration match those below:
+
+    ```
+    . . .
+    # Allow anonymous FTP? (Disabled by default).
+    anonymous_enable=NO
+    #
+    # Uncomment this to allow local users to log in.
+    local_enable=YES
+    . . .
+    ```
+
+14. We will need to change/ uncomment some lines in the file. In order to allow the user to upload files, we’ll uncomment the `write_enable` setting so that we have:
+
+    ```
+    . . .
+    write_enable=YES
+    . . .
+    ```
+    
+    Also uncomment the chroot to prevent the FTP-connected user from accessing any files or commands outside the directory tree.
+    
+    ```
+    . . .
+    chroot_local_user=YES
+    . . .
+    ```
     
     
 
