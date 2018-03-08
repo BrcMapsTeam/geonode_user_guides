@@ -95,6 +95,33 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     4 drwxr-xr-x 3 sammy  sammy   4096 Aug 24 21:29 ..
     ```
     
+9.  Now create the directory where files can be uploaded. Assign ownership to the uder
+
+    `sudo mkdir /home/admin/ftp/files`
+    
+    `sudo chown admin:admin /home/admin/ftp/files`
+    
+10. Check the permissions again
+
+    ` sudo ls -la /home/admin/ftp`
+    
+    ```
+    Output
+    total 12
+    dr-xr-xr-x 3 nobody nogroup 4096 Aug 26 14:01 .
+    drwxr-xr-x 3 admin  admin   4096 Aug 26 13:59 ..
+    drwxr-xr-x 2 admin  admin   4096 Aug 26 14:01 files
+    ```
+11. We will now add a `test.txt` file to use when we test the FTP later on
+
+    `echo "vsftpd test file" | sudo tee /home/sammy/ftp/files/test.txt`
+    
+    Now that we have the `ftp` directory and allowed user access to the `files` directory the next step is configuaration
+    
+    
+    
+
+    
     
     
     
