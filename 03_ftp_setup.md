@@ -126,6 +126,7 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
 13. In `vsftpd.conf` check that the settings in your configuration match those below:
 
+    
     ```
     . . .
     # Allow anonymous FTP? (Disabled by default).
@@ -146,6 +147,7 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
     Also uncomment the chroot to prevent the FTP-connected user from accessing any files or commands outside the directory tree.
     
+   
     ```
     . . .
     chroot_local_user=YES
@@ -156,6 +158,7 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
     - add a user_sub_token in order to insert the username in our local_root directory path so our configuration will work for this user and any future users that might be added.
     
+    
     ```
     user_sub_token=$USER
     local_root=/home/$USER/ftp
@@ -163,6 +166,7 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
     - Limit the range of ports that can be used for passive FTP to make sure enough connections are available:
     
+   
     ```
     pasv_min_port=40000
     pasv_max_port=50000
@@ -172,6 +176,7 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
     - Also add a directive telling `vsftpd` to listen on a particular port for incoming FTP connections
     
+   
     ```
     listen_port=45000
     ```
