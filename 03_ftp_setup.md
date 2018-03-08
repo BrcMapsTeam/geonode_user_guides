@@ -193,7 +193,88 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
     Now, save and exit the file.
 
-16. 
+16. Create and add a user to the file. Use the `-a` flag to append to file
+
+    `echo "admin" | sudo tee -a /etc/vsftpd.userlist`
+    
+    Double check it is as expected
+    
+    ` cat /etc/vsftpd.userlist`
+    
+    ```
+    Output
+    admin
+    ```
+     
+17. Restart the daemon to load the configuration changes:
+
+    `sudo systemctl restart vsftpd`
+
+## Testing
+
+18. We have configured the server to allow only the user `admin` to connect via FTP. Let's make sure that's the case.
+
+    __Anonymous users should fail to connect.__ We disabled anonymous access. Here we'll test that by trying to connect anonymously. If we've done it properly, anonymous users should be denied permission:
+    
+    `ftp -p IP/HOSTNAME 45000`
+    
+    _Note: The port number is the same as we put in the conf file. If the listen_port was not included, then the 45000 is not required and the ftp will listen to the default port.__ 
+    
+    
+    ```
+    Output
+    Connected to IP/HOSTNAME
+    220 (vsFTPd 3.0.3)
+    Name (203.0.113.0:default): anonymous
+    530 Permission denied.
+    ftp: Login failed.
+    ftp>
+    ```
+    
+    To close the connection
+    
+    ```
+    ftp> bye
+    ```
+    
+    __Users other than admin should fail to connect__
+    
+    `ftp -p IP/HOSTNAME 45000`
+    
+     ```
+    Output
+    Connected to IP/HOSTNAME
+    220 (vsFTPd 3.0.3)
+    Name (203.0.113.0:default): admin
+    331 Please specify the password.
+    Password: your_user's_password
+    230 Login successful.
+    Remote system type is UNIX.
+    Using binary mode to transfer files.
+    ftp>
+    ```
+    
+    We'll change into the `files` directory, then use the get command to transfer the test file we created earlier to our local machine:
+    
+    ```
+    ftp> cd files
+    ftp> get test.txt
+    ```
+    
+    ```
+    Output
+    227 Entering Passive Mode (203,0,113,0,169,12).
+    150 Opening BINARY mode data connection for test.txt (16 bytes).
+    226 Transfer complete.
+    16 bytes received in 0.0101 seconds (1588 bytes/s)
+    ftp>
+    ```
+    
+    
+    
+    
+    
+    
 
     
     
