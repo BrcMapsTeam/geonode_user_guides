@@ -180,6 +180,18 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     ```
     listen_port=45000
     ```
+    
+    - As we are only planning to allow FTP access on a case-by-case basis, set up the configuration so that access is given to a user only when they are explicitly added to a list rather than by default:
+
+    ```
+    userlist_enable=YES
+    userlist_file=/etc/vsftpd.userlist
+    userlist_deny=NO
+    ```
+
+    `userlist_deny` toggles the logic. When it is set to "YES", users on the list are denied FTP access. When it is set to "NO", only users on the list are allowed access. 
+    
+    Now, save and exit the file.
 
 16. 
 
