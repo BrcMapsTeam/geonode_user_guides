@@ -151,8 +151,32 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     chroot_local_user=YES
     . . .
     ```
+
+15. At the bottom of the conf file add the following:
     
+    - add a user_sub_token in order to insert the username in our local_root directory path so our configuration will work for this user and any future users that might be added.
     
+    ```
+    user_sub_token=$USER
+    local_root=/home/$USER/ftp
+    ```
+    
+    - Limit the range of ports that can be used for passive FTP to make sure enough connections are available:
+    
+    ```
+    pasv_min_port=40000
+    pasv_max_port=50000
+    ```
+    
+    _Note: Earlier, we pre-opened the ports that we set here for the passive port range. If you change the values, be sure to update your firewall settings.
+    
+    - Also add a directive telling `vsftpd` to listen on a particular port for incoming FTP connections
+    
+    ```
+    listen_port=45000
+    ```
+
+16. 
 
     
     
