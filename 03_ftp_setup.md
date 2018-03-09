@@ -351,28 +351,28 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     
     Add the following lines to explicitly deny anonymous connections over SSL and to require SSL for both data transfer and logins:
     
-   ```
-   allow_anon_ssl=NO
-   force_local_data_ssl=YES
-   force_local_logins_ssl=YES
-   ```
+    ```
+    allow_anon_ssl=NO
+    force_local_data_ssl=YES
+    force_local_logins_ssl=YES
+    ```
     
-   Configure the server to use TLS, the preferred successor to SSL by adding the following lines:
+    Configure the server to use TLS, the preferred successor to SSL by adding the following lines:
         
-   ```
-   ssl_tlsv1=YES
-   ssl_sslv2=NO
-   ssl_sslv3=NO
-   ```
+    ```
+    ssl_tlsv1=YES
+    ssl_sslv2=NO
+    ssl_sslv3=NO
+    ```
     
-   Finally, add two more options. First, we will not require SSL reuse because it can break many FTP clients. We will require "high" encryption cipher suites, which currently means key lengths equal to or greater than 128 bits:
+    Finally, add two more options. First, we will not require SSL reuse because it can break many FTP clients. We will require "high" encryption cipher suites, which currently means key lengths equal to or greater than 128 bits:
    
-   ```
-   require_ssl_reuse=NO
-   ssl_ciphers=HIGH
-   ```
+    ```
+    require_ssl_reuse=NO
+    ssl_ciphers=HIGH
+    ```
    
-   Save and close the file
+    Save and close the file
    
 22. Now, restart the server for the changes to take effect
 
