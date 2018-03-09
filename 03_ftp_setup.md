@@ -146,7 +146,7 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     ```
     
     Also uncomment the chroot to prevent the FTP-connected user from accessing any files or commands outside the directory tree.
-    
+    __For our purpose, we will only have one user, admin. Therefore keep the below commented out. The admin should have access to the entire tree.__
    
     ```
     . . .
