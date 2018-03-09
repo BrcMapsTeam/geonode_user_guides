@@ -270,17 +270,125 @@ These instructions are guided by this source: https://www.digitalocean.com/commu
     ftp>
     ```
     
+    We'll turn right back around and try to upload the file with a new name to test write permissions:
     
-# To be continued....
+    `ftp> put test.txt upload.txt`
+    
+    ```
+    Output
+    227 Entering Passive Mode (203,0,113,0,164,71).
+    150 Ok to send data.
+    226 Transfer complete.
+    16 bytes sent in 0.000894 seconds (17897 bytes/s)
+    ```
+    
+    Close the connection:
+    
+    `ftp> bye`
+    
+    Now that we've tested our configuration, we'll take steps to further secure our server.
 
+19. Securing Transactions
     
-    
-    
+    Since FTP does not encrypt any data in transit, including user credentials, we'll enable TTL/SSL to provide that encryption. The first step is to create the SSL certificates for use with vsftpd.
 
+    We'll use openssl to create a new certificate and use the -days flag to make it valid for one year. In the same command, we'll add a private 2048-bit RSA key. Then by setting both the -keyout and -out flags to the same value, the private key and the certificate will be located in the same file.
+
+    We'll do this with the following command:
     
+    `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem`
     
+    There will be a prompt to provide address information for your certificate. Substitute your own information for the questions below:
     
+    ```
+    Output
+    Generating a 2048 bit RSA private key
+    ............................................................................+++
+    ...........+++
+    writing new private key to '/etc/ssl/private/vsftpd.pem'
+    -----
+    You are about to be asked to enter information that will be incorporated
+    into your certificate request.
+    What you are about to enter is what is called a Distinguished Name or a DN.
+    There are quite a few fields but you can leave some blank
+    For some fields there will be a default value,
+    If you enter '.', the field will be left blank.
+    -----
+    Country Name (2 letter code) [AU]:**
+    State or Province Name (full name) [Some-State]:******
+    Locality Name (eg, city) []:******
+    Organization Name (eg, company) [Internet Widgits Pty Ltd]:******* *** *****
+    Organizational Unit Name (eg, section) []:***
+    Common Name (e.g. server FQDN or YOUR name) []: ***
+    Email Address []:****@********.***.**
+    ```
     
+20. Once the certificate has been created, open the vsftpd configuration file
+
+    `sudo gedit /etc/vsftpd.conf`
     
+    _we have used gedit, you can also use nano_
     
+    Toward the bottom of the file, there are two lines that begin with rsa_. Comment them out:
+
+    ```
+    # rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+    # rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+    ```
     
+    Below them, add the following lines which point to the certificate and private key just created:
+
+    ```
+    rsa_cert_file=/etc/ssl/private/vsftpd.pem
+    rsa_private_key_file=/etc/ssl/private/vsftpd.pem
+    ```
+    
+21. After that, we will force the use of SSL, which will prevent clients that can't deal with TLS from connecting. This is necessary in order to ensure all traffic is encrypted but may force your FTP user to change clients. Change ssl_enable to YES:
+    
+    ```
+    ssl_enable=YES
+    ```
+    
+    Add the following lines to explicitly deny anonymous connections over SSL and to require SSL for both data transfer and logins:
+    
+   ```
+   allow_anon_ssl=NO
+   force_local_data_ssl=YES
+   force_local_logins_ssl=YES
+   ```
+    
+   Configure the server to use TLS, the preferred successor to SSL by adding the following lines:
+        
+   ```
+   ssl_tlsv1=YES
+   ssl_sslv2=NO
+   ssl_sslv3=NO
+   ```
+    
+   Finally, add two more options. First, we will not require SSL reuse because it can break many FTP clients. We will require "high" encryption cipher suites, which currently means key lengths equal to or greater than 128 bits:
+   
+   ```
+   require_ssl_reuse=NO
+   ssl_ciphers=HIGH
+   ```
+   
+   Save and close the file
+   
+22. Now, restart the server for the changes to take effect
+
+    `sudo systemctl restart vsftpd`
+    
+    At this point, we will no longer be able to connect with an insecure command-line client. If we tried, we'd see something like:
+    
+    ```
+    ftp -p 203.0.113.0
+    Connected to 203.0.113.0.
+    220 (vsFTPd 3.0.3)
+    Name (203.0.113.0:default): admin
+    530 Non-anonymous sessions must use encryption.
+    ftp: Login failed.
+    421 Service not available, remote server has closed connection
+    ftp>
+    ```
+    
+### The FTP has now been set up. To test and/or use the FTP, we use filezilla. Instructions are found in the next guide section.
