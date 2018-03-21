@@ -82,7 +82,7 @@ Creating and editing a layer from scratch (this must be last!) Referred to a "mo
 
 Uploading documents, static maps and images
 
-Using geonode in QGIS, or ArcGIS
+Using geonode in QGIS (2.x and 3.x), or ArcGIS (wfs vs wms) - basic rules here 
 
 ### Styling
 
