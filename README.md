@@ -2,6 +2,10 @@
 
 This is a repository holding all install and user instructions/guides for GeoNode at BRC
 
+brcmapsteam.github.io/geonode_user_guides
+
+----
+
 
 ### [01 Install](https://github.com/BrcMapsTeam/geonode_user_guides/blob/master/01_install.md)
 
