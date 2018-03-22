@@ -6,7 +6,7 @@ layout: default
 
 This is a repository holding all install and user instructions/guides for GeoNode at BRC
 
-[Link to another page](/_docs/01_install.md).
+[Link to another page](/geonode_user_guides/_docs/01_install.md).
 
 
 <div>
