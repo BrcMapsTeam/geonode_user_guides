@@ -115,6 +115,9 @@ IMAGE_HERE
 
 Now, click on the 'Rule'. As a default this should be named 'Untitled 1' and click on 'Edit'. An additional pop up should appear. This pop up displays three tabs: 'Basic', 'Labels' and 'Advanced'.
 
+
+---
+
 - Basic
   - Name the rule
   - If a point feature, the symbol to represent a feature and its size and rotation
@@ -131,17 +134,20 @@ IMAGE_HERE (show a before and after?)
 
 IMAGE_HERE
 
-- 
+---
 
+- Advanced (_Note: these options will only be referred to in the "Advanced Styling" section_)
+  - Limit by scale
+  - Limit by condition
+    - If this condition is successful, the layer will show only the successful result, styled as in the 'Basic' tab
 
+When working with the advanced styling options it is useful for the user to know the attribute table which the layer represents.
 
+---
 
-open pop up
-name
-description
-set colour
-what about labels?
-points, lines and polygons (differences)
+Using the Basic and Label tabs style the layer.
+
+This may vary between points, lines and polygon shapefiles. 
 
 
 #### Advanced Styling
