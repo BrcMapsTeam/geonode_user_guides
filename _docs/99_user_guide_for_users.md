@@ -86,7 +86,9 @@ Using geonode in QGIS (2.x and 3.x), or ArcGIS (wfs vs wms) - basic rules here
 
 ### Styling
 
-_Note: These sections require a user profile; either create a profile (see section: XXXXXXXXX or email: XXXXXXX@XXXXXXXX to request assistance)_
+_Note: These sections require a user profile; either create a profile (see section: XXXXXXXXX or email: XXXXXXX@XXXXXXXX to request assistance)._
+
+_In addition, please inform the XXXXXXXX team or email XXXX@XXXX when a new style is created, in order to check that the style has been applied correctly_
 
 Geonode will automatically style the layer that has been uploaded with a default style. It is likely that this will not be what you as a user requires. Therefore, this section explores how to
 
@@ -98,16 +100,83 @@ Geonode will automatically style the layer that has been uploaded with a default
 
 Simple styles not based on attributes
 
+##### Example 1: .....
+WHAT IS THE EXAMPLE?
+
+Start by opening the Layer Styles pop up box. This can be opened by selecting 'Edit Layer' button in the top right, then 'Edit' in the Styles column. Alternatively select the paintbrush icon at the top of the map viewer
+
+IMAGE_HERE (multiple)
+
+Now set a Name and Description for your new style. This can be completed by selecting 'Edit' in the first section of the pop up.
+
+_Please add a sensible description and title of the style which you create._
+
+IMAGE_HERE
+
+Now, click on the 'Rule'. As a default this should be named 'Untitled 1' and click on 'Edit'. An additional pop up should appear. This pop up displays three tabs: 'Basic', 'Labels' and 'Advanced'.
+
+
+---
+
+- Basic
+  - Name the rule
+  - If a point feature, the symbol to represent a feature and its size and rotation
+  - Colour and opacity of the feature
+  - Style, colour and width of the line feature
+
+IMAGE_HERE (show a before and after?)
+
+- Labels
+  - Tick box to select if a label is required
+  - Field to use as the content of the label
+  - Font colour and opacity
+  - Additional advanced options
+
+IMAGE_HERE
+
+---
+
+- Advanced (_Note: these options will only be referred to in the "Advanced Styling" section_)
+  - Limit by scale
+  - Limit by condition
+    - If this condition is successful, the layer will show only the successful result, styled as in the 'Basic' tab
+
+When working with the advanced styling options it is useful for the user to know the attribute table which the layer represents.
+
+---
+
+Using the Basic and Label tabs style the layer.
+
+This may vary between points, lines and polygon shapefiles. 
+
+
 #### Advanced Styling
 
 Rule based styling
 
 Geonode allows styling based on attributes of the uploaded layer. This is one step further than the Basic Styling tutorial above.
 
-Example 1: Rule Based Styles
+##### Example 1: Rule Based Styles
+In the basic styling tutorial above we could only style all attributes the same, all regions represented as a single colour. This tutorial will show you how to create 'rule based styles'.
+
 For example, you have uploaded a polygon layer with two columns, 'name' and 'value'. Lets assume the value is related to vulnerability, with more vulnerable as red, represented by a value of 10, and less vulnerable, represented by a value of 0.
 
-In the basic styling tutorial above we could only style all attributes the same, all regions represented as a single colour. This tutorial will show you how to create 'rule based styles'.
+Start by opening the Layer Styles pop up box. This can be opened by selecting 'Edit Layer' button in the top right, then 'Edit' in the Styles column.
+
+IMAGE_HERE
+
+Following the same instructions above, name and set a description for your new style.
+
+As above select the 'Rule' which has been provided and select 'Edit'. As above the 'Style Rule' pop up box should appear,  where you find three tabs: 'Basic', 'Labels' and 'Advanced'. To find out about each of these options, reference the previous section: Basic Styling  
+
+
+
+
+
+
+
+
+
 
 
 
@@ -135,3 +204,8 @@ There should be 3 boxes visible.
 In order for a 'Layer Default Style' to be selected, first you will need to select some 'Available Styles'. Click on one, or more, of the styles in box 1 (left) to bring them across to box 2 (right). Once in box 2, they can be selected to style the layer and be chosen to be the default style
 
 IMAGE_HERE
+
+#### Administrators: Styles in Geoserver
+
+new style names in Geoserver
+update these! and ensure that the layer it links to works!
