@@ -63,6 +63,9 @@ Navigate to `/etc/geonode/local_settings.py` (if GeoNode has been installed usin
 
 
 
+
+.
+
 ---
 
 image an text credit: geonode.org and contributors
