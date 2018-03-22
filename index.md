@@ -2,6 +2,8 @@
 layout: default
 ---
 
+#Errors on this page - to be fixed
+
 # Geonode User Guides
 
 This is a repository holding all install and user instructions/guides for GeoNode at BRC
