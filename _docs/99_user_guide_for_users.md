@@ -102,6 +102,17 @@ Simple styles not based on attributes
 
 Rule based styling
 
+Geonode allows styling based on attributes of the uploaded layer. This is one step further than the Basic Styling tutorial above.
+
+Example 1: Rule Based Styles
+For example, you have uploaded a polygon layer with two columns, 'name' and 'value'. Lets assume the value is related to vulnerability, with more vulnerable as red, represented by a value of 10, and less vulnerable, represented by a value of 0.
+
+In the basic styling tutorial above we could only style all attributes the same, all regions represented as a single colour. This tutorial will show you how to create 'rule based styles'.
+
+
+
+
+
 #### Managing Styles
 
 Once a style has been created, you will then need to ensure that it is either the default style or can be selected by a user.
