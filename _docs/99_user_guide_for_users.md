@@ -126,7 +126,7 @@ Now, click on the 'Rule'. As a default this should be named 'Untitled 1' and cli
 
 IMAGE_HERE (show a before and after?)
 
-- Labels
+- Labels (_Note: these options will only be referred to in the "Advanced Styling" section_)
   - Tick box to select if a label is required
   - Field to use as the content of the label
   - Font colour and opacity
@@ -147,7 +147,7 @@ When working with the advanced styling options it is useful for the user to know
 
 Using the Basic and Label tabs style the layer.
 
-This may vary between points, lines and polygon shapefiles. 
+This may vary between points, lines and polygon shapefiles.
 
 
 #### Advanced Styling
@@ -167,11 +167,24 @@ IMAGE_HERE
 
 Following the same instructions above, name and set a description for your new style.
 
-As above select the 'Rule' which has been provided and select 'Edit'. As above the 'Style Rule' pop up box should appear,  where you find three tabs: 'Basic', 'Labels' and 'Advanced'. To find out about each of these options, reference the previous section: Basic Styling  
+As above select the 'Rule' which has been provided and select 'Edit'. As above the 'Style Rule' pop up box should appear,  where you find three tabs: 'Basic', 'Labels' and 'Advanced'. To find out about each of these options, reference the previous section: Basic Styling.
+
+In the example, we will classify the vulnerability into several groups progressively getting darker: 0 (blank), 1-2 (light red) ..., 9-10 (dark red)
+
+Select the 'Advanced' tab and select 'limit by condition'. Here you will be able to create a statement where if the layer fulfills this statement it will be styled as per the 'Basic' tab.
+
+We will start with the most vulnerable 9-10. The condition which we will set will be: Match 'any' of the following: 'value' 'between' '9' '10'. As you complete the statement the map should update. Now go to the 'basic' tab and style this rule as dark red. Click 'Save'.
+
+Back on the 'Layer Styles' pop-up duplicate the rule that you have just created and edit this rule, as above, but for e.g. vulnerability level 7-8, and so on.
+
+Once all rules have been created, click save. Your layer should now be styled as a choropleth.
+
+##### Example 2: Styles with Labels
 
 
 
-
+Labels....
+Need to make sure not to destroy a label!
 
 
 
@@ -206,6 +219,10 @@ In order for a 'Layer Default Style' to be selected, first you will need to sele
 IMAGE_HERE
 
 #### Administrators: Styles in Geoserver
+
+Once a new style has been added to Geonode, an administrator would need to edit the style within GeoServer.
+
+
 
 new style names in Geoserver
 update these! and ensure that the layer it links to works!
