@@ -46,7 +46,7 @@ git remote -v
 git push origin master
 ```
 
-
+Note: Atom is also installed on the machine
 
 
 
