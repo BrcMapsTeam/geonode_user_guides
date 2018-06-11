@@ -39,7 +39,14 @@ git init static
 Go to the folder
 ```
 cd static
+git add .
+git commit -m "adding original files"
+git remote add origin https://github.com/BrcMapsTeam/geonode_front_end.git
+git remote -v
+git push origin master
 ```
+
+
 
 
 
